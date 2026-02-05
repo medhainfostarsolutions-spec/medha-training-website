@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medha Infostar Solutions - Software Training & Placements</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .tagline {
+            background: #fff;
+            color: #1e3c72;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .contact-header {
+            text-align: right;
+        }
+
+        .contact-header a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(30, 60, 114, 0.9), rgba(42, 82, 152, 0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231e3c72" width="1200" height="600"/><path fill="%232a5298" opacity="0.3" d="M0 300L50 320L100 280L150 310L200 290L250 330L300 300L350 340L400 310L450 350L500 320L550 360L600 330L650 370L700 340L750 380L800 350L850 390L900 360L950 400L1000 370L1050 410L1100 380L1150 420L1200 390V600H0Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight-box {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 900px;
+            margin: 30px auto;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .highlight-box h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .feature {
+            background: white;
+            color: #1e3c72;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            color: #1e3c72;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            border-radius: 2px;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .course-category {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #1e3c72;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .course-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .course-category h3 {
+            color: #1e3c72;
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .course-category h3::before {
+            content: '✓';
+            background: #1e3c72;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .course-list {
+            list-style: none;
+        }
+
+        .course-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+            color: #555;
+        }
+
+        .course-list li:last-child {
+            border-bottom: none;
+        }
+
+        .training-modes {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 60px 20px;
+            margin: 60px 0;
+        }
+
+        .modes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mode-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .mode-card:hover {
+            transform: scale(1.05);
+        }
+
+        .mode-card h3 {
+            color: #1e3c72;
+            font-size: 24px;
+            margin: 20px 0 10px;
+        }
+
+        .mode-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .guarantee-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .guarantee-section h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .guarantee-section p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-section {
+            background: #f8f9fa;
+            padding: 60px 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-card h3 {
+            color: #1e3c72;
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-card p {
+            margin: 10px 0;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .contact-card a {
+            color: #2a5298;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #ff5252;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-header {
+                text-align: center;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo">⭐ MEDHA INFOSTAR SOLUTIONS</div>
+            </div>
+            <div class="contact-header">
+                <a href="tel:9966433573">📞 9966433573</a>
+                <a href="tel:7760081684">📞 7760081684</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Transform Your Career with Expert Software Training</h1>
+        <p>Real-time training by 10+ years experienced trainers</p>
+        <div class="highlight-box">
+            <h2>Think Different!!</h2>
+            <div class="features">
+                <div class="feature">Live Projects</div>
+                <div class="feature">IT Work Shops</div>
+                <div class="feature">100% Job Guarantee</div>
+            </div>
+        </div>
+        <a href="#contact" class="cta-button">Enroll Now</a>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">Software Courses Offered</h2>
+        <p style="text-align: center; font-size: 18px; color: #666; margin-bottom: 40px;">
+            Qualification: ANY DEGREE, DIPLOMA, B-TECH & PG
+        </p>
+
+        <div class="courses-grid">
+            <div class="course-category">
+                <h3>Programming & Development</h3>
+                <ul class="course-list">
+                    <li>JAVA</li>
+                    <li>C++</li>
+                    <li>PYTHON</li>
+                    <li>INFORMATICA, .NET</li>
+                    <li>RPA, AGILE</li>
+                    <li>PEGA</li>
+                </ul>
+            </div>
+
+            <div class="course-category">
+                <h3>Cloud & DevOps</h3>
+                <ul class="course-list">
+                    <li>AWS</li>
+                    <li>AZURE ADMIN & DEVELOPING</li>
+                    <li>DEVOPS</li>
+                    <li>CITRIX</li>
+                    <li>VMware</li>
+                </ul>
+            </div>
+
+            <div class="course-category">
+                <h3>Data & Analytics</h3>
+                <ul class="course-list">
+                    <li>DATA SCIENCE</li>
+                    <li>POWER BI</li>
+                    <li>TDATA ANALYTICS</li>
+                    <li>HADOOP</li>
+                    <li>SNOW FLAKE</li>
+                    <li>ARTIFICIAL INTELLIGENCE</li>
+                </ul>
+            </div>
+
+            <div class="course-category">
+                <h3>Database & Big Data</h3>
+                <ul class="course-list">
+                    <li>ORACLE</li>
+                    <li>SQL, PL/SQL</li>
+                    <li>MICROSOFT</li>
+                    <li>HADOOP</li>
+                </ul>
+            </div>
+
+            <div class="course-category">
+                <h3>Testing & Quality</h3>
+                <ul class="course-list">
+                    <li>SOFTWARE TESTING TOOLS</li>
+                    <li>EMBEDDED & HIL TESTING</li>
+                    <li>Cyber Security</li>
+                </ul>
+            </div>
+
+            <div class="course-category">
+                <h3>Enterprise Applications</h3>
+                <ul class="course-list">
+                    <li>SAP ALL MODULES</li>
+                    <li>SAP ENDUSER</li>
+                    <li>SALESFORCE</li>
+                    <li>SERVICENOW</li>
+                    <li>WORKSOFT, JIRA</li>
+                    <li>JIRA SOFTWARE</li>
+                </ul>
+            </div>
+
+            <div class="course-category">
+                <h3>Microsoft & Productivity</h3>
+                <ul class="course-list">
+                    <li>OFFICE 365, MS EXCEL</li>
+                    <li>IDS, SHARE POINT</li>
+                    <li>POWER APPS & AUTOMOTIVE</li>
+                </ul>
+            </div>
+
+            <div class="course-category">
+                <h3>Infrastructure & Networking</h3>
+                <ul class="course-list">
+                    <li>UNIX LINUX</li>
+                    <li>NETWORKING</li>
+                    <li>TRICENTIS TOSCA</li>
+                </ul>
+            </div>
+
+            <div class="course-category">
+                <h3>Finance & Accounting</h3>
+                <ul class="course-list">
+                    <li>ACCOUTING & FINANCIAL</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="training-modes">
+        <div class="container">
+            <h2 class="section-title">Training Modes Available</h2>
+            <div class="modes-grid">
+                <div class="mode-card">
+                    <div class="mode-icon">💻</div>
+                    <h3>Online Training</h3>
+                    <p>Learn from anywhere with live interactive sessions</p>
+                </div>
+                <div class="mode-card">
+                    <div class="mode-icon">🏢</div>
+                    <h3>Classroom Training</h3>
+                    <p>In-person training with hands-on practice</p>
+                </div>
+                <div class="mode-card">
+                    <div class="mode-icon">📅</div>
+                    <h3>Weekday Batches</h3>
+                    <p>Regular weekday schedules for working professionals</p>
+                </div>
+                <div class="mode-card">
+                    <div class="mode-icon">🎯</div>
+                    <h3>Weekend Classes</h3>
+                    <p>Perfect for those with weekday commitments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guarantee-section">
+        <h2>🎓 100% Job Guarantee Programme</h2>
+        <p>"Think different, Join with us and create a Bright Future Together"</p>
+        <a href="#contact" class="cta-button" style="background: white; color: #1e3c72;">Get Started Today</a>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>📞 Call Us</h3>
+                    <p><a href="tel:9966433573">9966433573</a></p>
+                    <p><a href="tel:7760081684">7760081684</a></p>
+                </div>
+                <div class="contact-card">
+                    <h3>📍 Visit Us</h3>
+                    <p><strong>2nd Floor, Meenakshi Towers</strong></p>
+                    <p>Site no. 35, Bagalur Main Road</p>
+                    <p>Shivapura, Kattigenhalli</p>
+                    <p>Bengaluru - 63</p>
+                    <p>Landmark: Near Shiva Temple</p>
+                </div>
+                <div class="contact-card">
+                    <h3>⏰ Working Hours</h3>
+                    <p><strong>Training Hours:</strong></p>
+                    <p>Online & Classroom sessions available</p>
+                    <p>Weekday & Weekend batches</p>
+                    <p><strong>Contact us for batch timings</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Medha Infostar Solutions. All rights reserved.</p>
+        <p>Trainings, Placements & Consultancy</p>
+    </footer>
+</body>
+</html>
