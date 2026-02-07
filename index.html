@@ -452,6 +452,10 @@
             .logo-section {
                 flex-direction: column;
             }
+            
+            .logo {
+                font-size: 32px;
+            }
         }
     </style>
 </head>
@@ -480,7 +484,7 @@
                 <div class="feature">100% Job Guarantee</div>
             </div>
         </div>
-        <a href="#contact" class="cta-button">Enroll Now</a>
+        <a href="#enroll" class="cta-button">Enroll Now</a>
     </section>
 
     <section class="specialty-section">
@@ -670,10 +674,180 @@
         </div>
     </section>
 
+    <section class="container" id="enroll">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 class="section-title">🎓 Enrollment Form</h2>
+            <p style="text-align: center; font-size: 18px; color: #666; margin-bottom: 40px;">
+                Fill in your details below to start your learning journey with us
+            </p>
+
+            <div id="successMessage" style="background: #4caf50; color: white; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; display: none; text-align: center;">
+                Thank you for enrolling! We will contact you shortly.
+            </div>
+
+            <div id="errorMessage" style="background: #f44336; color: white; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; display: none; text-align: center;">
+                There was an error submitting your form. Please try again or contact us directly.
+            </div>
+
+            <div style="background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 40px;">
+                <form id="enrollmentForm">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px;">
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; color: #1e3c72; font-weight: 600; font-size: 14px;">
+                                First Name <span style="color: #d32f2f;">*</span>
+                            </label>
+                            <input type="text" name="firstName" required style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px;">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; color: #1e3c72; font-weight: 600; font-size: 14px;">
+                                Last Name <span style="color: #d32f2f;">*</span>
+                            </label>
+                            <input type="text" name="lastName" required style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px;">
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px;">
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; color: #1e3c72; font-weight: 600; font-size: 14px;">
+                                Email Address <span style="color: #d32f2f;">*</span>
+                            </label>
+                            <input type="email" name="email" required style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px;">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 8px; color: #1e3c72; font-weight: 600; font-size: 14px;">
+                                Phone Number <span style="color: #d32f2f;">*</span>
+                            </label>
+                            <input type="tel" name="phone" required pattern="[0-9]{10}" placeholder="10-digit number" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px;">
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; margin-bottom: 8px; color: #1e3c72; font-weight: 600; font-size: 14px;">
+                            Qualification <span style="color: #d32f2f;">*</span>
+                        </label>
+                        <select name="qualification" required style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px;">
+                            <option value="">Select your qualification</option>
+                            <option value="B.Tech/B.E">B.Tech/B.E</option>
+                            <option value="MCA">MCA</option>
+                            <option value="M.Tech">M.Tech</option>
+                            <option value="BCA">BCA</option>
+                            <option value="B.Sc">B.Sc</option>
+                            <option value="M.Sc">M.Sc</option>
+                            <option value="Diploma">Diploma</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; margin-bottom: 8px; color: #1e3c72; font-weight: 600; font-size: 14px;">
+                            Course Interested In <span style="color: #d32f2f;">*</span>
+                        </label>
+                        <select name="course" required style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px;">
+                            <option value="">Select a course</option>
+                            <optgroup label="Programming & Development">
+                                <option value="JAVA">JAVA</option>
+                                <option value="C++">C++</option>
+                                <option value="PYTHON">PYTHON</option>
+                                <option value=".NET">.NET</option>
+                                <option value="RPA">RPA</option>
+                                <option value="PEGA">PEGA</option>
+                            </optgroup>
+                            <optgroup label="Cloud & DevOps">
+                                <option value="AWS">AWS</option>
+                                <option value="AZURE">AZURE</option>
+                                <option value="DEVOPS">DEVOPS</option>
+                            </optgroup>
+                            <optgroup label="Cyber Security">
+                                <option value="CYBER SECURITY">CYBER SECURITY</option>
+                                <option value="SOC ANALYST">SOC ANALYST</option>
+                            </optgroup>
+                            <optgroup label="Testing">
+                                <option value="SOFTWARE TESTING">SOFTWARE TESTING</option>
+                                <option value="TRICENTIS TOSCA">TRICENTIS TOSCA</option>
+                            </optgroup>
+                            <optgroup label="Data & Analytics">
+                                <option value="DATA SCIENCE">DATA SCIENCE</option>
+                                <option value="POWER BI">POWER BI</option>
+                                <option value="DATA ANALYTICS">DATA ANALYTICS</option>
+                            </optgroup>
+                            <optgroup label="Database">
+                                <option value="ORACLE">ORACLE</option>
+                                <option value="SQL">SQL/PL SQL</option>
+                            </optgroup>
+                            <optgroup label="SAP">
+                                <option value="SAP">SAP (All Modules)</option>
+                            </optgroup>
+                            <optgroup label="Other">
+                                <option value="SALESFORCE">SALESFORCE</option>
+                                <option value="SERVICENOW">SERVICENOW</option>
+                                <option value="Other">Other</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; margin-bottom: 8px; color: #1e3c72; font-weight: 600; font-size: 14px;">
+                            Preferred Training Mode <span style="color: #d32f2f;">*</span>
+                        </label>
+                        <select name="trainingMode" required style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px;">
+                            <option value="">Select training mode</option>
+                            <option value="Online">Online Training</option>
+                            <option value="Classroom">Classroom Training</option>
+                            <option value="Both">Both (Flexible)</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; margin-bottom: 8px; color: #1e3c72; font-weight: 600; font-size: 14px;">
+                            Batch Preference <span style="color: #d32f2f;">*</span>
+                        </label>
+                        <select name="batchPreference" required style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px;">
+                            <option value="">Select batch preference</option>
+                            <option value="Weekday">Weekday Batch</option>
+                            <option value="Weekend">Weekend Batch</option>
+                            <option value="Flexible">Flexible</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; margin-bottom: 8px; color: #1e3c72; font-weight: 600; font-size: 14px;">
+                            Work Experience
+                        </label>
+                        <select name="experience" style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px;">
+                            <option value="">Select experience level</option>
+                            <option value="Fresher">Fresher</option>
+                            <option value="0-1 years">0-1 years</option>
+                            <option value="1-3 years">1-3 years</option>
+                            <option value="3-5 years">3-5 years</option>
+                            <option value="5+ years">5+ years</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; margin-bottom: 8px; color: #1e3c72; font-weight: 600; font-size: 14px;">
+                            Additional Message / Questions
+                        </label>
+                        <textarea name="message" placeholder="Tell us more about your learning goals or any questions you have..." style="width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px; resize: vertical; min-height: 100px; font-family: inherit;"></textarea>
+                    </div>
+
+                    <button type="submit" style="width: 100%; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 15px 30px; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 20px;">
+                        Submit Enrollment
+                    </button>
+                </form>
+
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; text-align: center;">
+                    <h3 style="color: #1e3c72; margin-bottom: 10px;">Need Help?</h3>
+                    <p style="margin: 5px 0; color: #666;">📞 Call us: <a href="tel:9966433573" style="color: #2a5298; text-decoration: none; font-weight: 600;">9966433573</a> / <a href="tel:7760081684" style="color: #2a5298; text-decoration: none; font-weight: 600;">7760081684</a></p>
+                    <p style="margin: 5px 0; color: #666;">📧 Email: <a href="mailto:medhainfostarsolutions@gmail.com" style="color: #2a5298; text-decoration: none; font-weight: 600;">medhainfostarsolutions@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="guarantee-section">
         <h2>🎓 100% Job Guarantee Programme</h2>
         <p>"Think different, Join with us and create a Bright Future Together"</p>
-        <a href="#contact" class="cta-button" style="background: white; color: #1e3c72;">Get Started Today</a>
+        <a href="#enroll" class="cta-button" style="background: white; color: #1e3c72;">Get Started Today</a>
     </section>
 
     <section class="contact-section" id="contact">
@@ -709,4 +883,64 @@
     </section>
 
     <footer class="footer">
-        <d
+        <div class="container">
+            <p><strong>MEDHA INFOSTAR SOLUTIONS</strong></p>
+            <p>Empowering Careers Through Quality Training</p>
+            <p style="margin-top: 15px;">© All Rights Reserved | Medha Infostar Solutions</p>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('enrollmentForm');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Hide any previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+
+            // Get form data
+            const formData = new FormData(form);
+            
+            // Create email body
+            const emailBody = `New Enrollment Request from Medha Infostar Solutions Website
+
+Personal Information:
+- Name: ${formData.get('firstName')} ${formData.get('lastName')}
+- Email: ${formData.get('email')}
+- Phone: ${formData.get('phone')}
+
+Course Details:
+- Qualification: ${formData.get('qualification')}
+- Course Interested: ${formData.get('course')}
+- Training Mode: ${formData.get('trainingMode')}
+- Batch Preference: ${formData.get('batchPreference')}
+- Work Experience: ${formData.get('experience') || 'Not specified'}
+
+Additional Message:
+${formData.get('message') || 'No additional message'}
+
+---
+This form was submitted from the Medha Infostar Solutions website.`;
+
+            // Create mailto link
+            const mailtoLink = `mailto:medhainfostarsolutions@gmail.com?subject=New Enrollment: ${formData.get('firstName')} ${formData.get('lastName')} - ${formData.get('course')}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            successMessage.style.display = 'block';
+            
+            // Reset form
+            form.reset();
+            
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    </script>
+</body>
+</html>
